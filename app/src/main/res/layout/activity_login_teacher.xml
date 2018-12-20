@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:ignore="MissingDefaultResource">
+
+    <data>
+        <variable name="handler" type="sanaebadi.info.teacherhandler.activity.TeacherLoginActivity.MyHandlers"/>
+
+    </data>
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:id="@+id/coordinator"
+            android:fitsSystemWindows="false"
+            android:layout_height="match_parent">
+
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:id="@+id/toolbar_lay"
+                    android:layoutDirection="rtl"
+                    android:orientation="horizontal">
+
+
+                <!--Logic App info Button-->
+                <ImageView
+                        android:id="@+id/img_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:padding="5dp"
+                        android:onClick="@{handler::onBackClick}"
+                        app:srcCompat="@drawable/arrow_right"
+                        tools:ignore="ContentDescription,VectorDrawableCompat"/>
+
+
+                <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"/>
+
+                <!--Title page-->
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login"
+                        android:textSize="23sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@android:color/white"
+                        android:layout_gravity="center|start"
+                        android:gravity="center|start"/>
+
+            </LinearLayout>
+
+
+            <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    android:fitsSystemWindows="true"
+                    android:layout_below="@+id/toolbar_lay"
+                    android:scrollbarSize="1dp"
+                    android:scrollbarThumbVertical="@android:color/white">
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                >
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/img_teacher_profile"
+                            android:layout_width="120dp"
+                            android:gravity="center"
+                            android:layout_marginTop="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_height="120dp"
+                            android:src="@mipmap/teacher"
+                            android:scaleType="centerCrop"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="@android:color/white"/>
+
+                    <TextView android:layout_width="match_parent"
+                              android:id="@+id/txt_name_last_name_teacher"
+                              android:layout_margin="@dimen/launch_btn_margin"
+                              android:padding="@dimen/launch_btn_padding"
+                              tools:text="sana ebadi"
+                              android:gravity="center"
+                              android:textColor="@color/input_text_color"
+                              android:textSize="@dimen/student_info_recycler"
+                              android:layout_below="@+id/img_teacher_profile"
+                              android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_id"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/launch_btn_margin"
+                            android:layout_marginEnd="@dimen/launch_btn_margin"
+                            android:layout_below="@+id/txt_name_last_name_teacher"
+                            android:padding="@dimen/launch_btn_margin"
+                            android:layout_marginTop="20dp"
+                            app:counterEnabled="true"
+                            app:counterMaxLength="30">
+
+                        <EditText
+                                android:id="@+id/edt_teacher_id"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/launch_btn_margin"
+                                android:layout_marginEnd="@dimen/launch_btn_margin"
+                                android:hint="@string/student_email"
+                                android:maxLength="30"
+                                android:padding="@dimen/launch_btn_margin"
+                                android:inputType="textEmailAddress"
+                                android:textColor="@color/input_text_color"
+                                android:textSize="19sp"/>
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/text_input_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_input_id"
+                            android:padding="@dimen/launch_btn_margin"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginStart="@dimen/launch_btn_margin"
+                            android:layout_marginEnd="@dimen/launch_btn_margin"
+                            app:counterEnabled="true"
+                            app:counterMaxLength="10">
+
+                        <EditText
+                                android:id="@+id/edt_teacher_password"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/launch_btn_margin"
+                                android:layout_marginEnd="@dimen/launch_btn_margin"
+                                android:hint="@string/student_password"
+                                android:maxLength="10"
+                                android:padding="@dimen/launch_btn_margin"
+                                android:inputType="textPassword"
+                                android:textColor="@color/input_text_color"
+                                android:textSize="19sp"/>
+
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button android:layout_width="match_parent"
+                            android:layout_marginEnd="@dimen/launch_btn_margin"
+                            android:layout_marginStart="@dimen/launch_btn_margin"
+                            android:layout_marginTop="20dp"
+                            android:text="@string/login"
+                            android:enabled="false"
+                            android:onClick="@{handler::onLoginBtnClick}"
+                            android:padding="@dimen/launch_btn_margin"
+                            android:id="@+id/btn_teacher_login"
+                            android:textColor="@color/colorAccent"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:textSize="@dimen/welcome_text_size"
+                            android:layout_below="@+id/text_input_password"
+                            android:layout_height="wrap_content"/>
+
+
+                    <Button
+                            android:id="@+id/btn_link_register"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/launch_btn_margin"
+                            android:layout_marginStart="@dimen/launch_btn_margin"
+                            android:background="@null"
+                            android:layout_marginTop="@dimen/launch_btn_margin"
+                            android:gravity="center"
+                            android:onClick="@{handler::onLinkRegisterClick}"
+                            android:layout_below="@+id/btn_teacher_login"
+                            android:text="@string/not_a_member_sign_up_now"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/register_login_text"/>
+                </RelativeLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

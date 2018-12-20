@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "380641935868",
+    "firebase_url": "https://teacher-581c1.firebaseio.com",
+    "project_id": "teacher-581c1",
+    "storage_bucket": "teacher-581c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380641935868:android:9254634767998bec",
+        "android_client_info": {
+          "package_name": "sanaebadi.info.teacherhandler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "380641935868-nks44tldcjbl06a69m8i8uhrfu0olr2i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sanaebadi.info.teacherhandler",
+            "certificate_hash": "516f9a193f4034484269956adfb5983244f8872f"
+          }
+        },
+        {
+          "client_id": "380641935868-ch0p9l9hfil7ltf8026k0dbtg0pc695j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0Xo6BAH82YxruIDjXSXisphouT5P8jeE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "380641935868-ch0p9l9hfil7ltf8026k0dbtg0pc695j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

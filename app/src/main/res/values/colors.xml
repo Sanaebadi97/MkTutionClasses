@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4e1a50</color>
+    <color name="colorPrimaryDark">#4c194e</color>
+    <color name="colorAccent">#FF8F00</color>
+
+    <!--Expand Header Text Color-->
+    <color name="header">#ffffff</color>
+    <color name="child">#2d2b2b</color>
+    <color name="main_bg">#607D8B</color>
+    <color name="card_bg">#607D8B</color>
+    <color name="card_child_bg">#ffffff</color>
+
+    <!--Launch Activity-->
+    <color name="content_bg">#541d56</color>
+    <color name="btn_launch_bg">#461448</color>
+
+    <!--Login page-->
+    <color name="input_text_color">#0b0b0b</color>
+</resources>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable name="handler" type="sanaebadi.info.teacherhandler.activity.UploadPdfActivity.MyHandlers"/>
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="false"
+            tools:context=".activity.StudentInfoActivity">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:layoutDirection="rtl"
+                    android:id="@+id/toolbar_lay"
+                    android:orientation="horizontal">
+
+
+                <!--Logic App info Button-->
+                <ImageView
+                        android:id="@+id/img_add_student_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:padding="5dp"
+                        android:onClick="@{handler::onBackClick}"
+                        app:srcCompat="@drawable/arrow_right"
+                        tools:ignore="ContentDescription,VectorDrawableCompat"/>
+
+
+                <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"/>
+
+                <!--Title page-->
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upload_pdf_title"
+                        android:textSize="23sp"
+                        android:textStyle="bold"
+                        android:id="@+id/txt_upload_title"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@android:color/white"
+                        android:layout_gravity="center|start"
+                        android:gravity="center|start"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar_lay">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_file_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="70dp"
+                        android:padding="@dimen/launch_btn_padding"
+                        android:layout_marginEnd="@dimen/launch_btn_padding"
+                        android:layout_marginStart="@dimen/launch_btn_padding"
+                        android:layout_centerVertical="true"
+                        android:hint="@string/name_file"
+                        android:textColor="@color/input_text_color"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:layout_marginRight="@dimen/launch_btn_padding"/>
+
+                <Button
+                        android:id="@+id/btn_upload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/edt_file_name"
+                        android:onClick="@{handler::onUploadClick}"
+                        android:textColor="@color/colorAccent"
+                        android:enabled="false"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:textSize="@dimen/welcome_text_size"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="@dimen/launch_btn_margin"
+                        android:layout_marginStart="@dimen/launch_btn_margin"
+                        android:padding="@dimen/launch_btn_margin"
+                        android:text="@string/upload_pdf_btn"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btn_upload"
+                        android:layout_marginTop="?attr/actionBarSize"
+                        android:layout_alignParentBottom="true"
+                        android:orientation="vertical">
+
+
+                    <ProgressBar
+                            android:id="@+id/progressbar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:visibility="gone"/>
+
+                    <TextView
+                            android:id="@+id/txt_file_status"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no_file_selected"
+                            android:textAlignment="center"
+                            android:textColor="@color/input_text_color"
+                            android:textSize="@dimen/student_info_text"
+                            android:layout_margin="@dimen/launch_btn_margin"
+                            android:padding="@dimen/launch_btn_padding"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+
+
+                    <Button
+                            android:id="@+id/btn_show_uploads"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{handler::onShowUploadFiles}"
+                            android:background="@drawable/launch_btn_shape"
+                            android:textColor="@color/colorAccent"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:textSize="@dimen/welcome_text_size"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="@dimen/launch_btn_margin"
+                            android:layout_marginStart="@dimen/launch_btn_margin"
+                            android:padding="@dimen/launch_btn_margin"
+                            android:text="@string/view_uploads"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/button_radius_large"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+            android:id="@+id/view_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent">
+
+        <ImageView
+                android:id="@+id/delete_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/launch_btn_margin"
+                android:src="@drawable/delete"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/launch_btn_margin"
+                android:layout_toLeftOf="@id/delete_icon"
+                android:text="@string/delete"
+                android:textColor="#fff"
+                android:textSize="13dp"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+            android:id="@+id/view_foreground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="@dimen/launch_btn_margin">
+
+        <TextView android:layout_width="wrap_content"
+                  android:id="@+id/txt_pdf_name"
+                  tools:text="@string/name_file"
+                  android:textColor="@color/input_text_color"
+                  android:padding="@dimen/launch_btn_padding"
+                  android:layout_margin="@dimen/launch_btn_margin"
+                  android:textSize="@dimen/launch_btn_text"
+                  android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

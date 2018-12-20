@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/card_list"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:cardPreventCornerOverlap="true"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginEnd="@dimen/launch_btn_margin"
+            android:layout_marginStart="@dimen/launch_btn_margin"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toTopOf="parent"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="@dimen/button_radius_large">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="match_parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/student"
+                    app:civ_border_color="@android:color/white"
+                    app:civ_border_width="2dp"
+                    android:id="@+id/img_student_profile"/>
+
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center"
+                      android:gravity="center"
+                      android:padding="@dimen/launch_btn_padding"
+                      android:textSize="@dimen/student_info_recycler"
+                      android:textColor="@color/input_text_color"
+                      android:layout_margin="@dimen/launch_btn_margin"
+                      tools:text="name"
+                      android:textIsSelectable="true"
+                      android:id="@+id/txt_stu_name"/>
+            <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"/>
+
+            <ImageView android:layout_width="wrap_content"
+                       android:src="@drawable/chevron_right"
+                       android:layout_gravity="center|right"
+                       android:gravity="center|right"
+                       android:layout_margin="5dp"
+                       android:padding="5dp"
+                       android:id="@+id/img_more"
+                       android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

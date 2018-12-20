@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="sanaebadi.info.teacherhandler">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+            android:name=".handler.AppController"
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activity.BatchesStudentActivity">
+        </activity>
+        <activity
+                android:name=".activity.StudentInfoActivity"
+                android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
+                android:name=".activity.StudentLoginActivity"
+                android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity android:name=".activity.StudentInfoListActivity">
+        </activity>
+        <activity
+                android:name=".activity.TeacherLoginActivity"
+                android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity android:name=".activity.QueryActivity">
+        </activity>
+        <activity android:name=".activity.TeacherHandelActivity">
+        </activity>
+
+        <service
+                android:name=".firebase.MyFirebaseMessagingService"
+                android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".activity.UploadPdfActivity">
+        </activity>
+        <activity android:name=".activity.ViewUploadActivity">
+        </activity>
+        <activity
+                android:name=".activity.HomeActivity"
+                android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.StudentInfoDetails">
+        </activity>
+        <activity android:name=".activity.StudentBatchTimeActivity">
+        </activity>
+        <activity android:name=".activity.TeacherBatchTimeActivity">
+        </activity>
+        <activity android:name=".activity.StudentRegisterActivity">
+        </activity>
+        <activity android:name=".activity.TeacherRegisterActivity">
+        </activity>
+    </application>
+
+</manifest>

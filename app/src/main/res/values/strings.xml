@@ -1,0 +1,149 @@
+<resources>
+    <string name="app_name">MK Tution Classes</string>
+
+    <!--ExpandListView Headers-->
+    <string name="season1">Intermediate</string>
+    <string name="season2">B.COM</string>
+    <string name="season3">M.COM</string>
+    <string name="season4">UGC NET</string>
+    <string name="season5">Competition Level</string>
+
+
+    <!--ExpandListView Season 1 Child-->
+    <string name="season1_child_1">12th up board</string>
+    <string name="season1_child_2">12th CBSE Board</string>
+    <string name="season1_child_3">13th up board</string>
+    <string name="season1_child_4">13th CBSE Board</string>
+
+    <!--ExpandListView Season 2 Child-->
+    <string name="season2_child_1">12th up board</string>
+    <string name="season2_child_2">12th CBSE Board</string>
+    <string name="season2_child_3">13th up board</string>
+    <string name="season2_child_4">13th CBSE Board</string>
+
+    <!--ExpandListView Season 3 Child-->
+    <string name="season3_child_1">12th up board</string>
+    <string name="season3_child_2">12th CBSE Board</string>
+    <string name="season3_child_3">13th up board</string>
+    <string name="season3_child_4">13th CBSE Board</string>
+
+    <!--ExpandListView Season 4 Child-->
+    <string name="season4_child_1">12th up board</string>
+    <string name="season4_child_2">12th CBSE Board</string>
+    <string name="season4_child_3">13th up board</string>
+    <string name="season4_child_4">13th CBSE Board</string>
+
+    <!--ExpandListView Season 5 Child-->
+    <string name="season5_child_1">12th up board</string>
+    <string name="season5_child_2">12th CBSE Board</string>
+    <string name="season5_child_3">13th up board</string>
+    <string name="season5_child_4">13th CBSE Board</string>
+
+
+    <!--Teacher And Student Activity Title-->
+    <string name="teacher_title">Teacher</string>
+    <string name="student_title">Student</string>
+    <string name="student_email">Enter Your Email</string>
+    <string name="student_password">Enter Your Password</string>
+    <string name="welcome">Welcome</string>
+    <string name="batches_title">Batches</string>
+    <string name="add_the_details">Add the Details</string>
+    <string name="enter_the_panel">Enter the Panel</string>
+    <string name="upload_to_panel">Upload the PDF</string>
+    <string name="or">OR</string>
+
+    <!--Student Info Feilds-->
+    <string name="student_name">Student Name</string>
+    <string name="starting_date">Starting Date</string>
+    <string name="fee_due">Fee Due</string>
+    <string name="fee_deposit">Fee Deposit</string>
+    <string name="test_report">Test Report</string>
+    <string name="mobile_nom">Mobile Nom</string>
+    <string name="student_info">Student Info</string>
+    <string name="add_student">ADD STUDENT</string>
+    <string name="show_student_list">Show Student List</string>
+    <string name="info_added_sanck">Student info Added</string>
+    <string name="time_added_sanck">Batch Time Added</string>
+    <string name="add_warning_empty_edit_text">Please Fill All Fields</string>
+    <string name="query">Query</string>
+    <string name="enter_your_query">Enter your Query...</string>
+    <string name="submit">Submit</string>
+    <string name="query_window">Query Window</string>
+    <string name="student_info_list">Student Info List</string>
+    <string name="push_notification">Push Notification</string>
+
+    <!--Context Menu Items-->
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+    <string name="header">Select an Option :</string>
+    <string name="send_to">Share With</string>
+    <string name="delete_item">item Deleted !</string>
+    <string name="select_pdf_file">Upload Pdf File</string>
+    <string name="enter_a_name_for_your_file">Enter a name for your file</string>
+    <string name="upload_pdf">Upload PDF</string>
+    <string name="pdf_files_view">PDF Files View</string>
+    <string name="home_screen">Home Screen</string>
+
+    <!--Home Item-->
+    <string name="class_room">Students and Classes</string>
+    <string name="teacher_staff">Teachers</string>
+    <string name="report">Report and Upgrade</string>
+    <string name="students">Students</string>
+
+    <string name="error_login_edit_id">please enter most 10 char</string>
+    <string name="error_login_edit_pass">please enter most 5 char</string>
+    <string name="upload_pdf_title">Upload Pdf</string>
+    <string name="name_file">Enter a name for your file</string>
+    <string name="upload_pdf_btn">Upload PDF</string>
+    <string name="no_file_selected">No file selected</string>
+    <string name="view_uploads">View Uploads</string>
+
+    <!--Network-->
+    <string name="wait_network">Waiting for Network…</string>
+
+    <!--Batch Time-->
+    <string name="batch_time_title">Batch Time</string>
+    <string name="morning_timing">Morning Timing</string>
+    <string name="afternoon_timing">AfterNoon Timing</string>
+    <string name="evening_timing">Evening Timing</string>
+    <string name="night_timing">Night Timing</string>
+
+    <string name="morning_batch_1">8 AM : 10 AM</string>
+    <string name="morning_batch_2">10 AM: 12 AM</string>
+
+    <string name="afternoon_batch_1">1 PM : 3 PM</string>
+    <string name="afternoon_batch_2">3 PM: 5 PM</string>
+
+
+    <string name="evening_batch_1">5 PM : 6 PM</string>
+    <string name="evening_batch_2">6 PM : 7 PM</string>
+
+    <string name="night_batch_1">7 PM : 8:30 PM</string>
+    <string name="night_batch_2">9 PM : 11 PM</string>
+    <string name="batch_time_card">Batch Time</string>
+    <string name="second_batch_time">Second Batch Time</string>
+    <string name="first_batch_time">First Batch Time</string>
+    <string name="show_stu_batch_time">Show Batch Time</string>
+
+    <!--Time-->
+    <string name="time_title">Batch Time</string>
+    <string name="first_time">Batch Time 1</string>
+    <string name="second_time">Batch Time 2</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="btn_link_to_register">Already Registered! Login Me.</string>
+    <string name="not_a_member_sign_up_now">Not a member? Sign up now</string>
+    <string name="login_student">Login</string>
+    <string name="item_deleted">item Deleted !</string>
+    <string name="please_wait">Please Wait...</string>
+    <string name="processing">Processing...</string>
+    <string name="register_succesed">Registration Successful!</string>
+    <string name="enter_your_first_name">Enter Your First Name</string>
+    <string name="last_name">Enter Your Last Name</string>
+    <string name="upload_successfuly">File Uploaded Successfully</string>
+    <string name="no_file_chosen">No file chosen</string>
+    <string name="select_pdf">Select PDF :</string>
+</resources>

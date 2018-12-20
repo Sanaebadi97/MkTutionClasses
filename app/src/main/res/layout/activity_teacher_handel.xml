@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:ignore="MissingDefaultResource"
+>
+
+    <data>
+        <variable name="handler" type="sanaebadi.info.teacherhandler.activity.TeacherHandelActivity.MyHandlers"/>
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:fitsSystemWindows="true"
+            android:scrollbarSize="1dp"
+            android:scrollbarThumbVertical="@android:color/white">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@color/content_bg"
+                android:layout_height="match_parent">
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center|left"
+                    android:layout_gravity="center|start"
+                    android:layoutDirection="rtl"
+                    android:id="@+id/toolbar_lay"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/teacher_title"
+                        android:textSize="23sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@android:color/white"
+                        android:layout_gravity="center|start"
+                        android:gravity="center|start"/>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/card_add_to_details"
+                    app:cardPreventCornerOverlap="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:layout_marginEnd="@dimen/launch_btn_margin"
+                    android:layout_marginStart="@dimen/launch_btn_margin"
+                    app:cardUseCompatPadding="true"
+                    android:layout_below="@+id/toolbar_lay"
+                    android:onClick="@{handler::onAddDetailsClick}"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="@dimen/button_radius_large"
+            >
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="@dimen/launch_btn_padding"
+                        android:layout_margin="@dimen/launch_btn_margin"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:src="@mipmap/add_details"
+                            android:id="@+id/img_add_details"
+                            android:layout_height="wrap_content"/>
+
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:textSize="@dimen/launch_btn_text"
+                              android:textStyle="bold"
+                              android:textColor="@color/colorAccent"
+                              android:layout_gravity="center"
+                              android:gravity="center"
+                              android:layout_marginTop="@dimen/text_margin_top_launch"
+                              android:text="@string/add_the_details"/>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true"
+                    android:id="@+id/card_upload_pdf"
+                    android:layout_below="@+id/card_add_to_details"
+                    android:background="?attr/selectableItemBackground"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_marginEnd="@dimen/launch_btn_margin"
+                    android:layout_marginStart="@dimen/launch_btn_margin"
+                    app:cardCornerRadius="@dimen/button_radius_large"
+                    android:onClick="@{handler::onUploadPdfFile}">
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="@dimen/teacher_handler_padding"
+                        android:layout_margin="@dimen/launch_btn_margin"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:src="@mipmap/pdf"
+                            android:id="@+id/img_student"
+                            android:layout_height="wrap_content"/>
+
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:textSize="@dimen/launch_btn_text"
+                              android:textStyle="bold"
+                              android:textColor="@color/colorAccent"
+                              android:layout_gravity="center"
+                              android:gravity="center"
+                              android:layout_marginTop="@dimen/text_margin_top_launch"
+                              android:text="@string/upload_to_panel"/>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true"
+                    android:id="@+id/card_batch_time"
+                    android:layout_below="@+id/card_upload_pdf"
+                    android:background="?attr/selectableItemBackground"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_marginEnd="@dimen/launch_btn_margin"
+                    android:layout_marginStart="@dimen/launch_btn_margin"
+                    app:cardCornerRadius="@dimen/button_radius_large"
+                    android:onClick="@{handler::onBatchTimeClick}">
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="@dimen/teacher_handler_padding"
+                        android:layout_margin="@dimen/launch_btn_margin"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:src="@mipmap/time"
+                            android:id="@+id/img_pdf"
+                            android:layout_height="wrap_content"/>
+
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:textSize="@dimen/launch_btn_text"
+                              android:textStyle="bold"
+                              android:textColor="@color/colorAccent"
+                              android:layout_gravity="center"
+                              android:gravity="center"
+                              android:layout_marginTop="@dimen/text_margin_top_launch"
+                              android:text="@string/batch_time_card"/>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

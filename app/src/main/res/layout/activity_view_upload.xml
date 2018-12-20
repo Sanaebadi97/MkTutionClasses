@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            tools:context=".activity.StudentInfoListActivity">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:id="@+id/toolbar_lay"
+                    android:layoutDirection="rtl"
+                    android:orientation="horizontal">
+
+
+                <!--Logic App info Button-->
+                <ImageView
+                        android:id="@+id/img_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/arrow_right"
+                        tools:ignore="ContentDescription,VectorDrawableCompat"/>
+
+
+                <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"/>
+
+                <!--Title page-->
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pdf_files_view"
+                        android:textSize="23sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="@android:color/white"
+                        android:layout_gravity="center|start"
+                        android:gravity="center|start"/>
+
+            </LinearLayout>
+
+
+            <ProgressBar android:layout_width="wrap_content"
+                         android:layout_centerInParent="true"
+                         android:id="@+id/progressbar"
+                         android:visibility="gone"
+                         android:layout_height="wrap_content"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintTop_toBottomOf="@id/toolbar_lay"
+                    android:layout_marginTop="?attr/actionBarSize"
+                    android:id="@+id/rv_show_pdf_uploaded"/>
+        </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
+
+
