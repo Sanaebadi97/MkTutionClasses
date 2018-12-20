@@ -5,9 +5,12 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
 import sanaebadi.info.teacherhandler.R
+import sanaebadi.info.teacherhandler.database.query.Querys
 import sanaebadi.info.teacherhandler.databinding.ActivityQueryBinding
+import sanaebadi.info.teacherhandler.viewModel.QueryViewModel
 
 class QueryActivity : BaseActivity() {
     private lateinit var binding: ActivityQueryBinding
@@ -17,10 +20,17 @@ class QueryActivity : BaseActivity() {
     private var isPressed = false
     private var isReached = false
 
+    private lateinit var queryMessage: String
+    private lateinit var studentName: String
+    private lateinit var queryViewModel: QueryViewModel
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_query)
 
+
+        queryViewModel = ViewModelProviders.of(this).get(QueryViewModel::class.java)
 
         /*TextWatcher EditText*/
         binding.edtQuery.addTextChangedListener(fillAllTextWatcher)
@@ -81,7 +91,7 @@ class QueryActivity : BaseActivity() {
 
         override fun afterTextChanged(s: Editable) {
             // if edittext has 10chars & this is not called yet, add new line
-            if (binding.edtQuery.text.length == 15 && !isReached) {
+            if (binding.edtQuery.text.length == 20 && !isReached) {
                 binding.edtQuery.append("\n")
                 isReached = true
             }
@@ -97,9 +107,33 @@ class QueryActivity : BaseActivity() {
             finish()
         }
 
+        /*Insert To Database*/
         fun onQuerySubmit(view: View) {
-            val snackbar = Snackbar
-                .make(binding.coordinator, getString(R.string.submit_query), Snackbar.LENGTH_LONG).show()
+
+            /*define edit text and get input string from there*/
+
+            queryMessage = binding.edtQuery.text.toString()
+            studentName = binding.edtName.text.toString()
+
+            /*on click on btn add and insert to list database*/
+
+            val querys = Querys(queryMessage, studentName)
+
+            /*If Do not fill all EditTexts Yo can not Add*/
+
+            if (queryMessage.trim().isNotEmpty() && studentName.trim().isNotEmpty()
+            ) {
+                queryViewModel.insertQuery(querys)
+
+                val snackbar = Snackbar
+                    .make(binding.coordinator, getString(R.string.submit_query), Snackbar.LENGTH_LONG).show()
+            } else {
+                Snackbar.make(
+                    binding.coordinator,
+                    getString(R.string.add_warning_empty_edit_text),
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 
