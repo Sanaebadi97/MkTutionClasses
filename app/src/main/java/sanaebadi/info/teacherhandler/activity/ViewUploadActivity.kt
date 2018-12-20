@@ -179,7 +179,7 @@ class ViewUploadActivity : BaseActivity(), ViewUploadAdapter.OnItemClickListener
 
     override fun onResume() {
         super.onResume()
-        adapter.notifyDataSetChanged()
+
     }
 
 }
