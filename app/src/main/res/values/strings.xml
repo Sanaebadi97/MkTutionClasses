@@ -85,9 +85,9 @@
     <string name="home_screen">Home Screen</string>
 
     <!--Home Item-->
-    <string name="class_room">Students and Classes</string>
+    <string name="notification">Notification</string>
     <string name="teacher_staff">Teachers</string>
-    <string name="report">Report and Upgrade</string>
+    <string name="attendance">Attendance</string>
     <string name="students">Students</string>
 
     <string name="error_login_edit_id">please enter most 10 char</string>

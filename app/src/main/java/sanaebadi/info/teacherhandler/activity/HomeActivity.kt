@@ -42,7 +42,7 @@ class HomeActivity : BaseActivity(), HomeScreenAdapter.OnItemClickListener {
     private fun putData() {
         homeItemList.add(
             HomeItem(
-                getString(R.string.class_room),
+                getString(R.string.attendance),
                 R.mipmap.class_room
             )
         )
@@ -63,8 +63,8 @@ class HomeActivity : BaseActivity(), HomeScreenAdapter.OnItemClickListener {
 
         homeItemList.add(
             HomeItem(
-                getString(R.string.report),
-                R.mipmap.report
+                getString(R.string.notification),
+                R.mipmap.notifications
             )
         )
 
