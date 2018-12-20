@@ -1,4 +1,4 @@
-package sanaebadi.info.teacherhandler.database
+package sanaebadi.info.teacherhandler.database.studentNameFamily
 
 import android.app.Application
 import android.os.AsyncTask
@@ -6,7 +6,10 @@ import androidx.lifecycle.LiveData
 
 /*Repository class should be created for server and get and put data ..*/
 class StudentNameFamilyRepository(var application: Application) {
-    private fun studentNameFamilyDb() = StudentNameFamilyRoomDatabase.getDatabase(application)
+    private fun studentNameFamilyDb() =
+        StudentNameFamilyRoomDatabase.getDatabase(
+            application
+        )
     private fun studentNameFamilyDao() = studentNameFamilyDb().studentNameFamilyDao()
 
     /*Insert and Delete should do in background not in main thread , so use AsyncTask*/
@@ -44,7 +47,9 @@ class StudentNameFamilyRepository(var application: Application) {
 
     /*insert student fun ... get main func from Student Dao interface*/
     fun insertStudentNameFamily(studentNameFamily: StudentNameFamily) {
-        StudentNameFamilyRepository.Companion.InsertStuNameFamily(studentNameFamilyDao()).execute(studentNameFamily)
+        InsertStuNameFamily(
+            studentNameFamilyDao()
+        ).execute(studentNameFamily)
     }
 
     /*delete student fun ... get main func from Student Dao interface*/

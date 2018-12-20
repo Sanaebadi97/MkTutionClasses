@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import sanaebadi.info.teacherhandler.R
-import sanaebadi.info.teacherhandler.database.TeacherNameFamily
+import sanaebadi.info.teacherhandler.database.teacherNameFamily.TeacherNameFamily
 import sanaebadi.info.teacherhandler.databinding.ActivityTeacherRegisterBinding
 import sanaebadi.info.teacherhandler.viewModel.TeacherNameFamilyViewModel
 
@@ -125,7 +125,11 @@ class TeacherRegisterActivity : BaseActivity() {
 
 
                         /*Insert TO database*/
-                        val teacherNameFamily = TeacherNameFamily(teacherFirstName, teacherLastName)
+                        val teacherNameFamily =
+                            TeacherNameFamily(
+                                teacherFirstName,
+                                teacherLastName
+                            )
 
                         if (teacherFirstName.trim().isNotEmpty() && teacherLastName.trim().isNotEmpty()) {
                             teacherNameFamilyViewModel.insertTeacherNameFamily(teacherNameFamily)

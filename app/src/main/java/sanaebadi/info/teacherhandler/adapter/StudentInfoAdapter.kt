@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.stu_info_add_row.view.*
 import sanaebadi.info.teacherhandler.R
 import sanaebadi.info.teacherhandler.activity.StudentInfoDetails
-import sanaebadi.info.teacherhandler.database.Student
+import sanaebadi.info.teacherhandler.database.student.Student
 
 class StudentInfoAdapter(private val context: Context, private var mStudentList: MutableList<Student>?) :
     RecyclerView.Adapter<StudentInfoAdapter.StudentInfoViewHolder>() {

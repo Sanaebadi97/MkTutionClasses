@@ -1,26 +1,25 @@
-package sanaebadi.info.teacherhandler.database
+package sanaebadi.info.teacherhandler.database.studentNameFamily
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [TeacherNameFamily::class], version = 1)
-abstract class TeacherNameFamilyRoomDatabase : RoomDatabase() {
+@Database(entities = [StudentNameFamily::class], version = 1)
+abstract class StudentNameFamilyRoomDatabase : RoomDatabase() {
 
-    abstract fun teacherNameFamilyDao(): TeacherNameFamilyDao
-
+    abstract fun studentNameFamilyDao(): StudentNameFamilyDao
 
     companion object {
-        private var sInstance: TeacherNameFamilyRoomDatabase? = null
+        private var sInstance: StudentNameFamilyRoomDatabase? = null
 
-        fun getDatabase(context: Context): TeacherNameFamilyRoomDatabase {
+        fun getDatabase(context: Context): StudentNameFamilyRoomDatabase {
             if (sInstance == null) {
                 synchronized(RoomDatabase::class.java) {
                     if (sInstance == null) {
                         sInstance = Room.databaseBuilder(
                             context.applicationContext,
-                            TeacherNameFamilyRoomDatabase::class.java, "teacher_name_family_db"
+                            StudentNameFamilyRoomDatabase::class.java, "student_name_family_db"
                         ).build()
                     }
                 }
@@ -29,4 +28,5 @@ abstract class TeacherNameFamilyRoomDatabase : RoomDatabase() {
             return sInstance!!
         }
     }
+
 }

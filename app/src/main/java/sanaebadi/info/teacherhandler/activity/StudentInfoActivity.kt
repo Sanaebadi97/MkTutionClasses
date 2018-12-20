@@ -5,12 +5,11 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
-import android.view.WindowManager
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
 import sanaebadi.info.teacherhandler.R
-import sanaebadi.info.teacherhandler.database.Student
+import sanaebadi.info.teacherhandler.database.student.Student
 import sanaebadi.info.teacherhandler.databinding.ActivityStudentInfoBinding
 import sanaebadi.info.teacherhandler.viewModel.StudentViewModel
 

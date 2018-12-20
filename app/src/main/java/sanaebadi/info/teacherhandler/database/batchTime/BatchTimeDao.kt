@@ -1,4 +1,4 @@
-package sanaebadi.info.teacherhandler.database
+package sanaebadi.info.teacherhandler.database.batchTime
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

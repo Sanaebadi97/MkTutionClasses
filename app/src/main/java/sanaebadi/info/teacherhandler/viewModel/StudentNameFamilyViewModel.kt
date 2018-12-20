@@ -3,11 +3,12 @@ package sanaebadi.info.teacherhandler.viewModel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import sanaebadi.info.teacherhandler.database.StudentNameFamily
-import sanaebadi.info.teacherhandler.database.StudentNameFamilyRepository
+import sanaebadi.info.teacherhandler.database.studentNameFamily.StudentNameFamily
+import sanaebadi.info.teacherhandler.database.studentNameFamily.StudentNameFamilyRepository
 
 class StudentNameFamilyViewModel(application: Application) : AndroidViewModel(application) {
-    private val studentNameFamilyRepository: StudentNameFamilyRepository = StudentNameFamilyRepository(application)
+    private val studentNameFamilyRepository: StudentNameFamilyRepository =
+        StudentNameFamilyRepository(application)
     val allStuNameFamily: LiveData<List<StudentNameFamily>> = studentNameFamilyRepository.getAllStuNameFamily()
 
 

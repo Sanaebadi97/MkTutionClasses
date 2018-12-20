@@ -1,4 +1,4 @@
-package sanaebadi.info.teacherhandler.database
+package sanaebadi.info.teacherhandler.database.student
 
 import android.content.Context
 import androidx.room.Database

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.batch_time_row.view.*
 import sanaebadi.info.teacherhandler.R
-import sanaebadi.info.teacherhandler.database.BatchTime
+import sanaebadi.info.teacherhandler.database.batchTime.BatchTime
 
 class BatchTimeStudentAdapter(
     private val context: Context,

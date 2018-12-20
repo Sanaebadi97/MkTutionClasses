@@ -3,11 +3,12 @@ package sanaebadi.info.teacherhandler.viewModel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import sanaebadi.info.teacherhandler.database.BatchTimeRepository
-import sanaebadi.info.teacherhandler.database.BatchTime
+import sanaebadi.info.teacherhandler.database.batchTime.BatchTimeRepository
+import sanaebadi.info.teacherhandler.database.batchTime.BatchTime
 
 class BatchTimeViewModel(application: Application) : AndroidViewModel(application) {
-    private val batchTimeRepository: BatchTimeRepository = BatchTimeRepository(application)
+    private val batchTimeRepository: BatchTimeRepository =
+        BatchTimeRepository(application)
     val allTime: LiveData<List<BatchTime>> = batchTimeRepository.getAllTime()
 
 

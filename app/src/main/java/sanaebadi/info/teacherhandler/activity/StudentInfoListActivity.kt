@@ -14,7 +14,7 @@ import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_student_info_list.*
 import sanaebadi.info.teacherhandler.R
 import sanaebadi.info.teacherhandler.adapter.StudentInfoAdapter
-import sanaebadi.info.teacherhandler.database.Student
+import sanaebadi.info.teacherhandler.database.student.Student
 import sanaebadi.info.teacherhandler.databinding.ActivityStudentInfoListBinding
 import sanaebadi.info.teacherhandler.viewModel.StudentViewModel
 

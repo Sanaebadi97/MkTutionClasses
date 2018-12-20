@@ -1,4 +1,4 @@
-package sanaebadi.info.teacherhandler.database
+package sanaebadi.info.teacherhandler.database.teacherNameFamily
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
@@ -30,10 +30,10 @@ interface TeacherNameFamilyDao {
 
 
 //    /*query delete item*/
-//    @Query("DELETE FROM student_info")
+//    @Querys("DELETE FROM student_info")
 //    fun deleteStuInfo()
 
-//    @Query("DELETE FROM teacher_name_last_name WHERE teacher_id = :stuId")
+//    @Querys("DELETE FROM teacher_name_last_name WHERE teacher_id = :stuId")
 //    fun deleteStuNameFamily(stuId: Int)
 
 }

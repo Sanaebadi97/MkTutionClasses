@@ -1,10 +1,11 @@
-package sanaebadi.info.teacherhandler.database
+package sanaebadi.info.teacherhandler.database.student
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import sanaebadi.info.teacherhandler.database.student.Student
 
 @Dao
 interface StudentDao {
@@ -30,7 +31,7 @@ interface StudentDao {
 
 
 //    /*query delete item*/
-//    @Query("DELETE FROM student_info")
+//    @Querys("DELETE FROM student_info")
 //    fun deleteStuInfo()
 
     @Query("DELETE FROM student_info WHERE stu_id = :stuId")

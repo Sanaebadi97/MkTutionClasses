@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
 import sanaebadi.info.teacherhandler.R
-import sanaebadi.info.teacherhandler.database.BatchTime
+import sanaebadi.info.teacherhandler.database.batchTime.BatchTime
 import sanaebadi.info.teacherhandler.databinding.ActivityTeacherBatchTimeBinding
 import sanaebadi.info.teacherhandler.viewModel.BatchTimeViewModel
 

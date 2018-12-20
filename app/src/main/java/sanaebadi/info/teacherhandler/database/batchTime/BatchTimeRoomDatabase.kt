@@ -1,4 +1,4 @@
-package sanaebadi.info.teacherhandler.database
+package sanaebadi.info.teacherhandler.database.batchTime
 
 import android.content.Context
 import androidx.room.Database
@@ -15,10 +15,10 @@ abstract class BatchTimeRoomDatabase : RoomDatabase() {
 
 
         fun getDatabase(context: Context): BatchTimeRoomDatabase {
-            if (BatchTimeRoomDatabase.sInstance == null) {
+            if (sInstance == null) {
                 synchronized(RoomDatabase::class.java) {
-                    if (BatchTimeRoomDatabase.sInstance == null) {
-                        BatchTimeRoomDatabase.sInstance = Room.databaseBuilder(
+                    if (sInstance == null) {
+                        sInstance = Room.databaseBuilder(
                             context.applicationContext,
                             BatchTimeRoomDatabase::class.java, "time_batch_db"
                         ).build()
@@ -26,7 +26,7 @@ abstract class BatchTimeRoomDatabase : RoomDatabase() {
                 }
             }
 
-            return BatchTimeRoomDatabase.sInstance!!
+            return sInstance!!
         }
     }
 }

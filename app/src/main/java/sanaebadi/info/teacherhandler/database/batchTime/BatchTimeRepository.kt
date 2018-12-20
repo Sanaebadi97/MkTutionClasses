@@ -1,11 +1,12 @@
-package sanaebadi.info.teacherhandler.database
+package sanaebadi.info.teacherhandler.database.batchTime
 
 import android.app.Application
 import android.os.AsyncTask
 import androidx.lifecycle.LiveData
 
 class BatchTimeRepository(val application: Application) {
-    private fun timeBatchDb() = BatchTimeRoomDatabase.getDatabase(application)
+    private fun timeBatchDb() =
+        BatchTimeRoomDatabase.getDatabase(application)
     private fun timeBatchDao() = timeBatchDb().batchTimeDao()
 
     /*Insert and Delete should do in background not in main thread , so use AsyncTask*/

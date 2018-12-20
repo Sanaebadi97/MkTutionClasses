@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import sanaebadi.info.teacherhandler.R
 import sanaebadi.info.teacherhandler.adapter.BatchTimeStudentAdapter
-import sanaebadi.info.teacherhandler.database.BatchTime
+import sanaebadi.info.teacherhandler.database.batchTime.BatchTime
 import sanaebadi.info.teacherhandler.databinding.ActivityBatchTimeStudentBinding
 import sanaebadi.info.teacherhandler.viewModel.BatchTimeViewModel
 

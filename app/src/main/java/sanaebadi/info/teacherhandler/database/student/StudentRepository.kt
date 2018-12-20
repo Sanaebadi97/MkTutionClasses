@@ -1,4 +1,4 @@
-package sanaebadi.info.teacherhandler.database
+package sanaebadi.info.teacherhandler.database.student
 
 import android.app.Application
 import android.os.AsyncTask
@@ -6,7 +6,8 @@ import androidx.lifecycle.LiveData
 
 /*Repository class should be created for server and get and put data ..*/
 class StudentRepository(var application: Application) {
-    private fun studentDb() = StudentRoomDatabase.getDatabase(application)
+    private fun studentDb() =
+        StudentRoomDatabase.getDatabase(application)
     private fun studentDao() = studentDb().studentDao()
 
 
