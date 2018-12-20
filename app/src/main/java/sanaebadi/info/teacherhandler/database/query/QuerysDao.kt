@@ -32,7 +32,7 @@ interface QuerysDao {
 
 
 //    /*query delete item*/
-//    @Querys("DELETE FROM student_info")
+//    @Querys("DELETE FROM querys")
 //    fun deleteStuInfo()
 
 //    @Query("DELETE FROM querys WHERE query_id = :stuId")

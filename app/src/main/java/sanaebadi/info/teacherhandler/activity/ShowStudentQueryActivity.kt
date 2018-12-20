@@ -1,7 +1,9 @@
 package sanaebadi.info.teacherhandler.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -22,9 +24,20 @@ class ShowStudentQueryActivity : BaseActivity() {
     private lateinit var queryAdapter: QueryAdapter
     private var queryList = ArrayList<Querys>()
 
+    private lateinit var queryMessage: String
+    private lateinit var queryStuName: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_show_student_query)
+
+
+        /*get Intent From TeacherBatchTimeActivity*/
+        if (intent.extras != null) {
+            queryMessage = intent.getStringExtra("QUERY_MESSAGE")
+            queryStuName = intent.getStringExtra("QUERY_STU_NAME")
+        } else
+            Log.i("console", "Data is null")
 
 
         //RecyclerView config
@@ -62,6 +75,35 @@ class ShowStudentQueryActivity : BaseActivity() {
         }
 
 
+    }
+
+    override fun onContextItemSelected(item: MenuItem?): Boolean {
+        when (item!!.itemId) {
+//            121 -> {
+//                /*Delete Item From List*/
+//                queryViewModel.deleteTime()
+//                batchTimeAdapter.removeItem(item.groupId)
+//                showSnake("item Deleted !")
+//            }
+
+            /*Share Item With Social Media*/
+//            122
+//            -> {
+//
+//                val body: String = application.getString(R.string.time_title) + " : " + queryMessage + "\n" +
+//                        application.getString(R.string.first_time) + " : " + queryStuName + "\n"
+//
+//
+//                val shareIntent = Intent()
+//                shareIntent.action = Intent.ACTION_SEND
+//                shareIntent.type = "text/plain"
+//                shareIntent.putExtra(Intent.EXTRA_TEXT, body)
+//                startActivity(Intent.createChooser(shareIntent, getString(R.string.send_to)))
+//
+//            }
+
+        }
+        return super.onContextItemSelected(item)
     }
 
     override fun finish() {

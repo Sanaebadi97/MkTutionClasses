@@ -1,5 +1,6 @@
 package sanaebadi.info.teacherhandler.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -125,8 +126,18 @@ class QueryActivity : BaseActivity() {
             ) {
                 queryViewModel.insertQuery(querys)
 
+                val queryMessage = binding.edtQuery.text.toString()
+                val queryStuentName = binding.edtName.text.toString()
+
                 val snackbar = Snackbar
                     .make(binding.coordinator, getString(R.string.submit_query), Snackbar.LENGTH_LONG).show()
+
+                val intent = Intent(applicationContext, ShowStudentQueryActivity::class.java)
+                intent.putExtra("QUERY_MESSAGE", queryMessage)
+                intent.putExtra("QUERY_STU_NAME", queryStuentName)
+                startActivity(intent)
+
+
             } else {
                 Snackbar.make(
                     binding.coordinator,
