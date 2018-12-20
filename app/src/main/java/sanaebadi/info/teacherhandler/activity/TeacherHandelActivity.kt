@@ -37,6 +37,10 @@ class TeacherHandelActivity : BaseActivity() {
             val intent = Intent(applicationContext, TeacherBatchTimeActivity::class.java)
             startActivity(intent)
         }
+        fun onQueryClick(view: View) {
+            val intent = Intent(applicationContext, ShowStudentQueryActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun finish() {

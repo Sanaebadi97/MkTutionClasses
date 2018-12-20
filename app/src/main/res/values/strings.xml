@@ -149,4 +149,5 @@
     <string name="error_editText">please enter most 10 char</string>
     <string name="enter_your_name">Enter your name</string>
     <string name="submit_query">Your Query Sanded!</string>
+    <string name="query_teacher">Students Query</string>
 </resources>
