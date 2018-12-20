@@ -146,4 +146,7 @@
     <string name="upload_successfuly">File Uploaded Successfully</string>
     <string name="no_file_chosen">No file chosen</string>
     <string name="select_pdf">Select PDF :</string>
+    <string name="error_editText">please enter most 10 char</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="submit_query">Your Query Sanded!</string>
 </resources>

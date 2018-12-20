@@ -33,6 +33,12 @@
                 android:windowSoftInputMode="adjustResize">
         </activity>
         <activity android:name=".activity.QueryActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".activity.TeacherHandelActivity">
         </activity>
@@ -65,11 +71,11 @@
         <activity android:name=".activity.TeacherRegisterActivity">
         </activity>
         <activity android:name=".activity.SplashScreenActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
     </application>
 

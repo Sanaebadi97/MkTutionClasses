@@ -64,7 +64,7 @@ class HomeActivity : BaseActivity(), HomeScreenAdapter.OnItemClickListener {
         homeItemList.add(
             HomeItem(
                 getString(R.string.notification),
-                R.mipmap.notifications
+                R.mipmap.notification
             )
         )
 
