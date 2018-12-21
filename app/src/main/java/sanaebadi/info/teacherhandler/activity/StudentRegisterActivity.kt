@@ -152,6 +152,7 @@ class StudentRegisterActivity : BaseActivity() {
                         intent.putExtra("STU_LAST_NAME", studentLastName)
                         Log.i(TAG, "$studentFirstName -> $studentLastName")
                         startActivity(intent)
+                        finish()
 
                     } else {
                         Log.e(TAG, it.exception.toString())
@@ -171,6 +172,7 @@ class StudentRegisterActivity : BaseActivity() {
         fun onLinkLoginClick(view: View) {
             val intent = Intent(applicationContext, StudentLoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         fun onBackClick(view: View) {

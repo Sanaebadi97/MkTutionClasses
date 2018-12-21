@@ -123,6 +123,7 @@ class StudentLoginActivity : BaseActivity() {
                         /*Intent to Login Activity*/
                         val intent = Intent(applicationContext, BatchesStudentActivity::class.java)
                         startActivity(intent)
+                        finish()
 
                     } else {
                         Log.e(TAG, it.exception.toString())
@@ -141,6 +142,7 @@ class StudentLoginActivity : BaseActivity() {
         fun onLinkRegisterClick(view: View) {
             val intent = Intent(applicationContext, StudentRegisterActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 

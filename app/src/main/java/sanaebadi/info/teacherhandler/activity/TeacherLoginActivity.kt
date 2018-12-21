@@ -126,6 +126,7 @@ class TeacherLoginActivity : BaseActivity() {
                         /*Intent to Login Activity*/
                         val intent = Intent(applicationContext, TeacherHandelActivity::class.java)
                         startActivity(intent)
+                        finish()
 
                     } else {
                         Log.e(StudentLoginActivity.TAG, it.exception.toString())
@@ -145,6 +146,7 @@ class TeacherLoginActivity : BaseActivity() {
         fun onLinkRegisterClick(view: View) {
             val intent = Intent(applicationContext, TeacherRegisterActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 

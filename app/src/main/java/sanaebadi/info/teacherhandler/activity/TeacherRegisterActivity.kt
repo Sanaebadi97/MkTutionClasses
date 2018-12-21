@@ -155,6 +155,7 @@ class TeacherRegisterActivity : BaseActivity() {
                         intent.putExtra("TEACHER_LAST_NAME", teacherLastName)
 
                         startActivity(intent)
+                        finish()
 
                     } else {
                         Log.e(StudentLoginActivity.TAG, it.exception.toString())
@@ -173,6 +174,7 @@ class TeacherRegisterActivity : BaseActivity() {
         fun onLinkLoginClick(view: View) {
             val intent = Intent(applicationContext, TeacherLoginActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }
