@@ -9,7 +9,9 @@ import sanaebadi.info.teacherhandler.database.studentNameFamily.StudentNameFamil
 class StudentNameFamilyViewModel(application: Application) : AndroidViewModel(application) {
     private val studentNameFamilyRepository: StudentNameFamilyRepository =
         StudentNameFamilyRepository(application)
+
     val allStuNameFamily: LiveData<List<StudentNameFamily>> = studentNameFamilyRepository.getAllStuNameFamily()
+    val stuNameFamily: LiveData<StudentNameFamily> = studentNameFamilyRepository.getStuNameFamily()
 
 
     /*insert Time */

@@ -129,7 +129,9 @@ class StudentRegisterActivity : BaseActivity() {
                             )
 
                         if (stuFirstName.trim().isNotEmpty() && stuLastName.trim().isNotEmpty()) {
-                            studentNameFamilyViewModel.insertStuNameFamily(studentNameFamily)
+
+                            /*Insert Name and Family To Database*/
+                           studentNameFamilyViewModel.insertStuNameFamily(studentNameFamily)
 
 
                         } else {

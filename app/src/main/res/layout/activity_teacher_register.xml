@@ -132,6 +132,8 @@
                         android:id="@+id/text_input_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        app:passwordToggleDrawable="@drawable/show_password_selector"
+                        app:passwordToggleEnabled="true"
                         android:layout_below="@+id/text_input_email"
                         android:padding="@dimen/launch_btn_margin"
                         android:layout_marginTop="20dp"
@@ -147,6 +149,7 @@
                             android:layout_marginStart="@dimen/launch_btn_margin"
                             android:layout_marginEnd="@dimen/launch_btn_margin"
                             android:hint="@string/student_password"
+
                             android:maxLength="10"
                             android:padding="@dimen/launch_btn_margin"
                             android:inputType="textPassword"

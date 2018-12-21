@@ -10,6 +10,7 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -48,7 +49,7 @@ class StudentLoginActivity : BaseActivity() {
             stuFirstName = intent.getStringExtra("STU_FIRST_NAME")
             stuLastName = intent.getStringExtra("STU_LAST_NAME")
 
-            binding.txtNameLastName.text = "$stuFirstName $stuLastName"
+            // binding.txtNameLastName.text = "$stuFirstName $stuLastName"
         } else
             Log.i("console", "Data is null")
 
@@ -61,7 +62,18 @@ class StudentLoginActivity : BaseActivity() {
 
         /*Fetch Room Database Data*/
         studentNameFamilyViewModel = ViewModelProviders.of(this).get(StudentNameFamilyViewModel::class.java)
-
+        studentNameFamilyViewModel.stuNameFamily.observe(this,
+            Observer {
+                try {
+                    if (!it.stu_first_name!!.isEmpty() && !it.stu_last_name!!.isEmpty()) {
+                       // binding.txtNameLastName.text = it.stu_first_name + " " + it.stu_last_name
+                    } else {
+                        Log.e(TAG, "Data Is Null Student Name and LastName")
+                    }
+                } catch (e: Exception) {
+                    Log.e(TAG, e.message)
+                }
+            })
 
         /*Firebase Auth*/
         firebaseAuth = FirebaseAuth.getInstance()
@@ -74,7 +86,8 @@ class StudentLoginActivity : BaseActivity() {
 
 
     /*Method If All EditText Are fill*/
-    private val fillAllTextWatcher = object : TextWatcher {
+    private
+    val fillAllTextWatcher = object : TextWatcher {
         override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
 
         }

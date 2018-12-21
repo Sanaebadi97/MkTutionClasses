@@ -138,6 +138,8 @@
                             android:layout_below="@+id/text_input_id"
                             android:padding="@dimen/launch_btn_margin"
                             android:layout_marginTop="20dp"
+                            app:passwordToggleDrawable="@drawable/show_password_selector"
+                            app:passwordToggleEnabled="true"
                             android:layout_marginStart="@dimen/launch_btn_margin"
                             android:layout_marginEnd="@dimen/launch_btn_margin"
                             app:counterEnabled="true"

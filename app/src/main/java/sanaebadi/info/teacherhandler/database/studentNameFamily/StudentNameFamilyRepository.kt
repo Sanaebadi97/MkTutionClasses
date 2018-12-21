@@ -10,6 +10,7 @@ class StudentNameFamilyRepository(var application: Application) {
         StudentNameFamilyRoomDatabase.getDatabase(
             application
         )
+
     private fun studentNameFamilyDao() = studentNameFamilyDb().studentNameFamilyDao()
 
     /*Insert and Delete should do in background not in main thread , so use AsyncTask*/
@@ -66,5 +67,10 @@ class StudentNameFamilyRepository(var application: Application) {
     /*get all student student fun ... get main func from Student Dao interface*/
     fun getAllStuNameFamily(): LiveData<List<StudentNameFamily>> {
         return studentNameFamilyDao().getAllStuNameFamily()
+    }
+
+    /*get all student student fun ... get main func from Student Dao interface*/
+    fun getStuNameFamily(): LiveData<StudentNameFamily> {
+        return studentNameFamilyDao().getStuNameFamily()
     }
 }

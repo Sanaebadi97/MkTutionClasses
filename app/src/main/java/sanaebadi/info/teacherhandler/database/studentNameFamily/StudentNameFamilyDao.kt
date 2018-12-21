@@ -5,7 +5,6 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import sanaebadi.info.teacherhandler.database.studentNameFamily.StudentNameFamily
 
 @Dao
 interface StudentNameFamilyDao {
@@ -28,6 +27,11 @@ interface StudentNameFamilyDao {
     /*query get all student info with live data*/
     @Query("SELECT * FROM stu_name_last_name")
     fun getAllStuNameFamily(): LiveData<List<StudentNameFamily>>
+
+
+    /*query get  student info with live data*/
+    @Query("SELECT * FROM stu_name_last_name")
+    fun getStuNameFamily(): LiveData<StudentNameFamily>
 
 
 //    /*query delete item*/
