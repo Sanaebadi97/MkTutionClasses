@@ -1,9 +1,6 @@
 package sanaebadi.info.teacherhandler.activity
 
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
+import android.content.*
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.os.Bundle
@@ -59,7 +56,12 @@ class GeneratePasswordActivity : BaseActivity() {
         }
 
         override fun afterTextChanged(s: Editable) {
-
+            /*Store Password */
+            val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+            val editor = prefs.edit()
+            editor.putString("STUDENT_PASSWORD", passwordInput) //InputString: from the EditText
+            Log.i("PASSWORD", "Password: $passwordInput")
+            editor.apply()
 
         }
 
@@ -75,7 +77,6 @@ class GeneratePasswordActivity : BaseActivity() {
         fun onSendPassword(view: View) {
 
             /*Give Student Email Adders From Shared Pref*/
-
             val prefs = PreferenceManager.getDefaultSharedPreferences(applicationContext)
             val data = prefs.getString("STUDENT_EMAIL", "email") //no id: default value
             Log.i("GENERATEPASSWORD", "EMAIL : " + data)
