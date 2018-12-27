@@ -1,6 +1,11 @@
 package sanaebadi.info.teacherhandler.activity
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.text.Editable
@@ -16,6 +21,9 @@ import sanaebadi.info.teacherhandler.databinding.ActivityGeneratePasswordBinding
 class GeneratePasswordActivity : BaseActivity() {
     private lateinit var binding: ActivityGeneratePasswordBinding
     private lateinit var passwordInput: String
+
+
+    private var receiver: ConnectivityListenerReceiver? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,7 +90,7 @@ class GeneratePasswordActivity : BaseActivity() {
             intent.putExtra(Intent.EXTRA_EMAIL, addressees)
             intent.putExtra(Intent.EXTRA_SUBJECT, subject)
             intent.putExtra(Intent.EXTRA_TEXT, message)
-            intent.setType("message/rfc822")
+            intent.type = "message/rfc822"
             startActivity(Intent.createChooser(intent, "Send Email using:"))
 
             Snackbar.make(
@@ -98,6 +106,41 @@ class GeneratePasswordActivity : BaseActivity() {
         super.finish()
         overridePendingTransition(R.anim.fade_in, R.anim.slide_out)
     }
+
+
+    /*Handel Network Connection*/
+    inner class ConnectivityListenerReceiver : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            val connectivityManager = context!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+            val networkInfo: NetworkInfo?
+            networkInfo = connectivityManager.activeNetworkInfo
+            val isConnected = networkInfo != null && networkInfo.isConnected
+            if (isConnected) {
+                binding.txtToolbar.text = context.getString(R.string.generate_password_title)
+            } else {
+                binding.txtToolbar.text = context.getString(R.string.wait_network)
+
+
+            }
+
+
+        }
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        receiver = ConnectivityListenerReceiver()
+        registerReceiver(receiver, IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"))
+
+    }
+
+    override fun onStop() {
+        unregisterReceiver(receiver)
+        super.onStop()
+    }
+
 
     override fun onResume() {
         super.onResume()
