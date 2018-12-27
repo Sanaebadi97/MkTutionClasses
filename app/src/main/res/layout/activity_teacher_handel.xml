@@ -273,7 +273,7 @@
                               android:layout_gravity="center"
                               android:gravity="center"
                               android:layout_marginTop="@dimen/text_margin_top_launch"
-                              android:text="@string/generate_passwprd"/>
+                              android:text="@string/generate_password_title"/>
 
 
                 </LinearLayout>

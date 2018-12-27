@@ -150,6 +150,9 @@
     <string name="enter_your_name">Enter your name</string>
     <string name="submit_query">Your Query Sanded!</string>
     <string name="query_teacher">Students Query</string>
-    <string name="generate_passwprd">Generate Password</string>
+    <string name="generate_password_title">Generate Password</string>
     <string name="deleted_item">Item Deleted!</string>
+    <string name="generate_password">Please Generate a Password</string>
+    <string name="enter_password_key">Enter less than 10 characters </string>
+    <string name="send_password">Send Password</string>
 </resources>
