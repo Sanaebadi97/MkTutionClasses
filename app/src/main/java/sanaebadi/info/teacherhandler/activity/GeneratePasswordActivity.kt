@@ -1,13 +1,17 @@
 package sanaebadi.info.teacherhandler.activity
 
+import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import com.google.android.material.snackbar.Snackbar
 import sanaebadi.info.teacherhandler.R
 import sanaebadi.info.teacherhandler.databinding.ActivityGeneratePasswordBinding
+
 
 class GeneratePasswordActivity : BaseActivity() {
     private lateinit var binding: ActivityGeneratePasswordBinding
@@ -62,39 +66,32 @@ class GeneratePasswordActivity : BaseActivity() {
         /*Insert To Database*/
         fun onSendPassword(view: View) {
 
-            /*define edit text and get input string from there*/
+            /*Give Student Email Adders From Shared Pref*/
 
-            // queryMessage = binding.edtQuery.text.toString()
+            val prefs = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+            val data = prefs.getString("STUDENT_EMAIL", "email") //no id: default value
+            Log.i("GENERATEPASSWORD", "EMAIL : " + data)
 
-            /*on click on btn add and insert to list database*/
 
+            /*Send Password Than Teacher Generated To Student Email*/
+            val subject = "Your Password"
+            val message = binding.edtGeneratePassword.text.toString()
 
-            /*If Do not fill all EditTexts Yo can not Add*/
+            val intent = Intent(Intent.ACTION_SEND)
+            val addressees = arrayOf(data)
+            intent.putExtra(Intent.EXTRA_EMAIL, addressees)
+            intent.putExtra(Intent.EXTRA_SUBJECT, subject)
+            intent.putExtra(Intent.EXTRA_TEXT, message)
+            intent.setType("message/rfc822")
+            startActivity(Intent.createChooser(intent, "Send Email using:"))
 
-//                if (queryMessage.trim().isNotEmpty() && studentName.trim().isNotEmpty()
-//                ) {
+            Snackbar.make(
+                binding.coordinator,
+                getString(R.string.email_sended),
+                Snackbar.LENGTH_SHORT
+            ).show()
 
-//                val queryMessage = binding.edtQuery.text.toString()
-//                val queryStuentName = binding.edtName.text.toString()
-
-//                    val snackbar = Snackbar
-//                        .make(binding.coordinator, getString(R.string.submit_query), Snackbar.LENGTH_LONG).show()
-//
-//                    val intent = Intent(applicationContext, ShowStudentQueryActivity::class.java)
-//                    intent.putExtra("QUERY_MESSAGE", queryMessage)
-//                    intent.putExtra("QUERY_STU_NAME", queryStuentName)
-//                    startActivity(intent)
-//
-//
-//                } else {
-//                    Snackbar.make(
-//                        binding.coordinator,
-//                        getString(R.string.add_warning_empty_edit_text),
-//                        Snackbar.LENGTH_SHORT
-//                    ).show()
-//                }
         }
-
     }
 
     override fun finish() {
@@ -102,4 +99,8 @@ class GeneratePasswordActivity : BaseActivity() {
         overridePendingTransition(R.anim.fade_in, R.anim.slide_out)
     }
 
+    override fun onResume() {
+        super.onResume()
+        binding.edtGeneratePassword.setText("")
+    }
 }

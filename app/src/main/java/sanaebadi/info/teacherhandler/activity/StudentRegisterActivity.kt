@@ -2,7 +2,9 @@ package sanaebadi.info.teacherhandler.activity
 
 import android.app.ProgressDialog
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
@@ -64,6 +66,10 @@ class StudentRegisterActivity : BaseActivity() {
         /*Handlers*/
         val handlers = MyHandlers()
         binding.handler = handlers
+
+        stuEmail = binding.edtStudentEmailRegister.text.toString()
+
+
     }
 
 
@@ -86,11 +92,22 @@ class StudentRegisterActivity : BaseActivity() {
             if (binding.btnStudentRegister.isEnabled) {
                 binding.btnStudentRegister.setBackgroundResource(R.drawable.launch_btn_shape)
             }
+
+
+
         }
 
         override fun afterTextChanged(s: Editable) {
 
+            /*Store Email Address*/
+            val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+            val editor = prefs.edit()
+            editor.putString("STUDENT_EMAIL", stuEmail) //InputString: from the EditText
+            Log.i(TAG, stuEmail)
+            editor.apply()
         }
+
+
     }
 
     //Handel  View Events Launch Activity
@@ -131,7 +148,7 @@ class StudentRegisterActivity : BaseActivity() {
                         if (stuFirstName.trim().isNotEmpty() && stuLastName.trim().isNotEmpty()) {
 
                             /*Insert Name and Family To Database*/
-                           studentNameFamilyViewModel.insertStuNameFamily(studentNameFamily)
+                            studentNameFamilyViewModel.insertStuNameFamily(studentNameFamily)
 
 
                         } else {
@@ -165,6 +182,7 @@ class StudentRegisterActivity : BaseActivity() {
                         snackbar.show()
                     }
                 }
+
 
 
             }
