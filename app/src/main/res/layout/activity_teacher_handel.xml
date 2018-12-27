@@ -81,7 +81,7 @@
                               android:layout_height="wrap_content"
                               android:textSize="@dimen/launch_btn_text"
                               android:textStyle="bold"
-                              android:textColor="@color/colorAccent"
+                              android:textColor="@color/input_text_color"
                               android:layout_gravity="center"
                               android:gravity="center"
                               android:layout_marginTop="@dimen/text_margin_top_launch"
@@ -129,7 +129,7 @@
                               android:layout_height="wrap_content"
                               android:textSize="@dimen/launch_btn_text"
                               android:textStyle="bold"
-                              android:textColor="@color/colorAccent"
+                              android:textColor="@color/input_text_color"
                               android:layout_gravity="center"
                               android:gravity="center"
                               android:layout_marginTop="@dimen/text_margin_top_launch"
@@ -175,7 +175,7 @@
                               android:layout_height="wrap_content"
                               android:textSize="@dimen/launch_btn_text"
                               android:textStyle="bold"
-                              android:textColor="@color/colorAccent"
+                              android:textColor="@color/input_text_color"
                               android:layout_gravity="center"
                               android:gravity="center"
                               android:layout_marginTop="@dimen/text_margin_top_launch"
@@ -222,11 +222,58 @@
                               android:layout_height="wrap_content"
                               android:textSize="@dimen/launch_btn_text"
                               android:textStyle="bold"
-                              android:textColor="@color/colorAccent"
+                              android:textColor="@color/input_text_color"
                               android:layout_gravity="center"
                               android:gravity="center"
                               android:layout_marginTop="@dimen/text_margin_top_launch"
                               android:text="@string/query_teacher"/>
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true"
+                    android:id="@+id/card_generate_password"
+                    android:onClick="@{handler::onGenerateClick}"
+                    android:layout_below="@+id/card_query"
+                    android:background="?attr/selectableItemBackground"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_marginEnd="@dimen/launch_btn_margin"
+                    android:layout_marginStart="@dimen/launch_btn_margin"
+                    app:cardCornerRadius="@dimen/button_radius_large"
+                  >
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="@dimen/teacher_handler_padding"
+                        android:layout_margin="@dimen/launch_btn_margin"
+                        android:layout_height="match_parent">
+
+                    <ImageView
+                            android:layout_width="wrap_content"
+                            android:src="@mipmap/password"
+                            android:id="@+id/img_generate_password"
+                            android:layout_height="wrap_content"/>
+
+
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:textSize="@dimen/launch_btn_text"
+                              android:textStyle="bold"
+                              android:textColor="@color/input_text_color"
+                              android:layout_gravity="center"
+                              android:gravity="center"
+                              android:layout_marginTop="@dimen/text_margin_top_launch"
+                              android:text="@string/generate_passwprd"/>
 
 
                 </LinearLayout>

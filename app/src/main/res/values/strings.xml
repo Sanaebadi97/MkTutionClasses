@@ -150,4 +150,6 @@
     <string name="enter_your_name">Enter your name</string>
     <string name="submit_query">Your Query Sanded!</string>
     <string name="query_teacher">Students Query</string>
+    <string name="generate_passwprd">Generate Password</string>
+    <string name="deleted_item">Item Deleted!</string>
 </resources>

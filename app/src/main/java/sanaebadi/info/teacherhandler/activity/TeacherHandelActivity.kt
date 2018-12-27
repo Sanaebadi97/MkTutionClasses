@@ -41,6 +41,10 @@ class TeacherHandelActivity : BaseActivity() {
             val intent = Intent(applicationContext, ShowStudentQueryActivity::class.java)
             startActivity(intent)
         }
+        fun onGenerateClick(view: View) {
+            val intent = Intent(applicationContext, GeneratePasswordActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun finish() {

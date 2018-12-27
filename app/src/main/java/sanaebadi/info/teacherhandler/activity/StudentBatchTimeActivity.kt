@@ -83,9 +83,10 @@ class StudentBatchTimeActivity : BaseActivity() {
 
             121 -> {
                 /*Delete Item From List*/
-                batchTimeViewModel.deleteTime()
+                batchTimeViewModel.deleteTime(batchTimeList[item.groupId])
                 batchTimeAdapter.removeItem(item.groupId)
-                showSnake("item Deleted !")
+
+                showSnake(getString(R.string.delete_item))
             }
 
             /*Share Item With Social Media*/
@@ -112,6 +113,7 @@ class StudentBatchTimeActivity : BaseActivity() {
     private fun showSnake(message: String) {
         Snackbar.make(binding.coordinator, message, Snackbar.LENGTH_SHORT).show()
     }
+
 
     override fun finish() {
         super.finish()

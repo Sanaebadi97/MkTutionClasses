@@ -166,7 +166,7 @@ class ViewUploadActivity : BaseActivity(), ViewUploadAdapter.OnItemClickListener
 
             // showing snack bar with Undo option
             val snackbar = Snackbar
-                .make(binding.coordinator, "$name removed from !", Snackbar.LENGTH_LONG)
+                .make(binding.coordinator, "$name removed!", Snackbar.LENGTH_LONG)
             snackbar.setAction("UNDO") {
                 // undo is selected, restore the deleted item
                 adapter.restoreItem(deletedItem, deletedIndex)

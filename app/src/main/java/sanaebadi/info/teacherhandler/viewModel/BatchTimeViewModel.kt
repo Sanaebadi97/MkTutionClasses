@@ -9,6 +9,7 @@ import sanaebadi.info.teacherhandler.database.batchTime.BatchTime
 class BatchTimeViewModel(application: Application) : AndroidViewModel(application) {
     private val batchTimeRepository: BatchTimeRepository =
         BatchTimeRepository(application)
+
     val allTime: LiveData<List<BatchTime>> = batchTimeRepository.getAllTime()
 
 
@@ -19,7 +20,7 @@ class BatchTimeViewModel(application: Application) : AndroidViewModel(applicatio
 
 
     /*delete time*/
-    fun deleteTime() {
-        batchTimeRepository.deleteTimeBatch()
+    fun deleteTime(batchTime: BatchTime) {
+        batchTimeRepository.deleteTimeBatch(batchTime)
     }
 }

@@ -65,6 +65,13 @@ class BatchTimeStudentAdapter(
     /*Remove Item from List*/
     public fun removeItem(position: Int) {
         batchTimeList.removeAt(position)
+        notifyItemRemoved(position)
         notifyDataSetChanged()
+    }
+
+    fun restoreItem(item: BatchTime, position: Int) {
+        batchTimeList.add(position, item)
+        // notify item added by position
+        notifyItemInserted(position)
     }
 }

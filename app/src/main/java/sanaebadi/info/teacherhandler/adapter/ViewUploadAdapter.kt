@@ -50,6 +50,7 @@ class ViewUploadAdapter(
         // to perform recycler view delete animations
         // NOTE: don't call notifyDataSetChanged()
         notifyItemRemoved(position)
+        notifyDataSetChanged()
     }
 
     fun restoreItem(item: Upload, position: Int) {

@@ -30,6 +30,6 @@ interface BatchTimeDao {
 
 
     /*query delete item*/
-    @Query("DELETE FROM batch_time")
-    fun deleteBatchTime()
+    @Delete
+    fun deleteBatchTime(batchTime: BatchTime)
 }

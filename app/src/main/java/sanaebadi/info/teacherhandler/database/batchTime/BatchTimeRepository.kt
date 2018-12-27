@@ -7,6 +7,7 @@ import androidx.lifecycle.LiveData
 class BatchTimeRepository(val application: Application) {
     private fun timeBatchDb() =
         BatchTimeRoomDatabase.getDatabase(application)
+
     private fun timeBatchDao() = timeBatchDb().batchTimeDao()
 
     /*Insert and Delete should do in background not in main thread , so use AsyncTask*/
@@ -23,9 +24,9 @@ class BatchTimeRepository(val application: Application) {
 
         /*Delete Fun in Background*/
 
-        class DeleteStuInfo(private val timeBatchDao: BatchTimeDao) : AsyncTask<BatchTime, Void?, Void?>() {
+        class DeleteBatchTime(private val timeBatchDao: BatchTimeDao) : AsyncTask<BatchTime, Void?, Void?>() {
             override fun doInBackground(vararg params: BatchTime?): Void? {
-                timeBatchDao.deleteBatchTime()
+                timeBatchDao.deleteBatchTime(params[0]!!)
                 return null
             }
 
@@ -41,8 +42,8 @@ class BatchTimeRepository(val application: Application) {
 
 
     /*delete time fun ... get main func from Time batch Dao interface*/
-    fun deleteTimeBatch() {
-        DeleteStuInfo(timeBatchDao()).execute()
+    fun deleteTimeBatch(batchTime: BatchTime) {
+        DeleteBatchTime(timeBatchDao()).execute(batchTime)
     }
 
 

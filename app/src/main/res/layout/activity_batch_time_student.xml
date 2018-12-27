@@ -13,7 +13,6 @@
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:background="@color/content_bg"
             android:id="@+id/coordinator"
             android:layout_width="match_parent" android:layout_height="match_parent"
             tools:context=".activity.StudentInfoListActivity">
