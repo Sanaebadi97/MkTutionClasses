@@ -6,6 +6,12 @@
         tools:ignore="MissingDefaultResource">
 
 
+    <data>
+
+        <variable name="handler" type="sanaebadi.info.teacherhandler.activity.StudentNumberPhoneDirect.MyHandlers"/>
+
+    </data>
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:id="@+id/coordinator"
@@ -33,6 +39,7 @@
                         android:layout_marginStart="12dp"
                         android:layout_marginEnd="12dp"
                         android:padding="5dp"
+                        android:onClick="@{handler::onBackClick}"
                         app:srcCompat="@drawable/arrow_right"
                         tools:ignore="ContentDescription,VectorDrawableCompat"/>
 
@@ -108,16 +115,16 @@
                             android:padding="@dimen/launch_btn_margin"
                             android:layout_marginTop="20dp"
                             app:counterEnabled="true"
-                            app:counterMaxLength="30">
+                            app:counterMaxLength="16">
 
                         <EditText
-                                android:id="@+id/edt_student_id"
+                                android:id="@+id/edt_stu_phone_num"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="@dimen/launch_btn_margin"
                                 android:layout_marginEnd="@dimen/launch_btn_margin"
                                 android:hint="@string/enter_your_phone_nom"
-                                android:maxLength="30"
+                                android:maxLength="16"
                                 android:padding="@dimen/launch_btn_margin"
                                 android:inputType="phone|number"
                                 android:textColor="@color/input_text_color"
@@ -131,10 +138,11 @@
                             android:layout_marginEnd="@dimen/launch_btn_margin"
                             android:layout_marginStart="@dimen/launch_btn_margin"
                             android:layout_marginTop="20dp"
-                            android:text="@string/login"
+                            android:text="@string/send_password_student"
                             android:enabled="false"
                             android:padding="@dimen/launch_btn_margin"
-                            android:id="@+id/btn_student_login"
+                            android:id="@+id/btn_student_send_phone_num"
+                            android:onClick="@{handler::onSendPhoneNom}"
                             android:textColor="@color/colorAccent"
                             android:foreground="?attr/selectableItemBackground"
                             android:textSize="@dimen/welcome_text_size"

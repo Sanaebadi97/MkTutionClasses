@@ -1,19 +1,14 @@
 package sanaebadi.info.teacherhandler.activity
 
 import android.annotation.SuppressLint
-import android.app.ProgressDialog
-import android.content.Intent
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.text.Editable
-import android.text.TextUtils
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import sanaebadi.info.teacherhandler.R
 import sanaebadi.info.teacherhandler.databinding.ActivityLoginStudentBinding
@@ -57,7 +52,6 @@ class StudentLoginActivity : BaseActivity() {
 
         /*TextWatcher EditText*/
 
-        binding.edtStudentId.addTextChangedListener(fillAllTextWatcher)
         binding.edtStudentPassword.addTextChangedListener(fillAllTextWatcher)
 
 
@@ -95,10 +89,9 @@ class StudentLoginActivity : BaseActivity() {
 
         override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
 
-            stuEmail = binding.edtStudentId.text.toString()
             stuPass = binding.edtStudentPassword.text.toString()
 
-            binding.btnStudentLogin.isEnabled = (!stuEmail.isEmpty() && !stuPass.isEmpty())
+            binding.btnStudentLogin.isEnabled = (!stuPass.isEmpty())
 
             if (binding.btnStudentLogin.isEnabled) {
                 binding.btnStudentLogin.setBackgroundResource(R.drawable.launch_btn_shape)
@@ -120,45 +113,45 @@ class StudentLoginActivity : BaseActivity() {
         /*Login With Firebase Auth*/
         fun onLoginBtnClick(view: View) {
 
-            val dialog: ProgressDialog = ProgressDialog.show(
-                this@StudentLoginActivity, getString(R.string.please_wait),
-                getString(R.string.processing), true
-            )
-            if (!TextUtils.isEmpty(stuEmail) && !TextUtils.isEmpty(stuPass)) {
-
-
-                /*Give Student Email Adders From Shared Pref*/
-                val prefs = PreferenceManager.getDefaultSharedPreferences(applicationContext)
-                val data = prefs.getString("STUDENT_PASSWORD", "password") //no id: default value
-                Log.i("GENERATEEMAIL", "PASSWORD : " + data)
-
-
-                firebaseAuth.signInWithEmailAndPassword(stuEmail, data!!).addOnCompleteListener {
-                    dialog.dismiss()
-                    if (it.isSuccessful) {
-                        val snackbar: Snackbar = Snackbar.make(
-                            binding.coordinator,
-                            getString(R.string.register_succesed), Snackbar.LENGTH_SHORT
-                        )
-                        snackbar.show()
-
-                        /*Intent to Login Activity*/
-                        val intent = Intent(applicationContext, BatchesStudentActivity::class.java)
-                        startActivity(intent)
-                        finish()
-
-                    } else {
-                        Log.e(TAG, it.exception.toString())
-                        val snackbar: Snackbar = Snackbar.make(
-                            binding.coordinator,
-                            it.exception!!.message!!, Snackbar.LENGTH_SHORT
-                        )
-                        snackbar.show()
-                    }
-                }
-
-            }
-        }
+//            val dialog: ProgressDialog = ProgressDialog.show(
+//                this@StudentLoginActivity, getString(R.string.please_wait),
+//                getString(R.string.processing), true
+//            )
+//            if (!TextUtils.isEmpty(stuEmail) && !TextUtils.isEmpty(stuPass)) {
+//
+//
+//                /*Give Student Email Adders From Shared Pref*/
+//                val prefs = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+//                val data = prefs.getString("STUDENT_PASSWORD", "password") //no id: default value
+//                Log.i("GENERATEEMAIL", "PASSWORD : " + data)
+//
+//
+//                firebaseAuth.signInWithEmailAndPassword(stuEmail, data!!).addOnCompleteListener {
+//                    dialog.dismiss()
+//                    if (it.isSuccessful) {
+//                        val snackbar: Snackbar = Snackbar.make(
+//                            binding.coordinator,
+//                            getString(R.string.register_succesed), Snackbar.LENGTH_SHORT
+//                        )
+//                        snackbar.show()
+//
+//                        /*Intent to Login Activity*/
+//                        val intent = Intent(applicationContext, BatchesStudentActivity::class.java)
+//                        startActivity(intent)
+//                        finish()
+//
+//                    } else {
+//                        Log.e(TAG, it.exception.toString())
+//                        val snackbar: Snackbar = Snackbar.make(
+//                            binding.coordinator,
+//                            it.exception!!.message!!, Snackbar.LENGTH_SHORT
+//                        )
+//                        snackbar.show()
+//                    }
+//                }
+//
+//            }
+//        }
 
 //        /*Go To Register Activity*/
 //        fun onLinkRegisterClick(view: View) {
@@ -166,6 +159,7 @@ class StudentLoginActivity : BaseActivity() {
 //            startActivity(intent)
 //            finish()
 //        }
+        }
     }
 
     override fun finish() {
@@ -177,7 +171,6 @@ class StudentLoginActivity : BaseActivity() {
         super.onResume()
 
         /*Delete EditText When Go to NextPage*/
-        binding.edtStudentId.setText("")
         binding.edtStudentPassword.setText("")
 
     }

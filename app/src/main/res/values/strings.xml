@@ -159,4 +159,7 @@
     <string name="phone_number">Phone Number</string>
     <string name="direct_password">Enter Your Phone Number To Send you The Password</string>
     <string name="enter_your_phone_nom">Enter Your Phone Nom</string>
+    <string name="get_the_password">Get The Password</string>
+    <string name="send_password_student">SEND PASSWORD</string>
+    <string name="message_sent">Message Sent!</string>
 </resources>

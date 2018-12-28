@@ -103,39 +103,13 @@
                               <!--android:layout_below="@+id/img_student_profile"-->
                               <!--android:layout_height="wrap_content"/>-->
 
-                    <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/text_input_id"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/launch_btn_margin"
-                            android:layout_marginEnd="@dimen/launch_btn_margin"
-                            android:layout_below="@+id/img_student_profile"
-                            android:padding="@dimen/launch_btn_margin"
-                            android:layout_marginTop="20dp"
-                            app:counterEnabled="true"
-                            app:counterMaxLength="30">
 
-                        <EditText
-                                android:id="@+id/edt_student_id"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/launch_btn_margin"
-                                android:layout_marginEnd="@dimen/launch_btn_margin"
-                                android:hint="@string/student_email"
-                                android:maxLength="30"
-                                android:padding="@dimen/launch_btn_margin"
-                                android:inputType="textEmailAddress"
-                                android:textColor="@color/input_text_color"
-                                android:textSize="19sp"/>
-
-
-                    </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/text_input_password"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@+id/text_input_id"
+                            android:layout_below="@+id/img_student_profile"
                             android:padding="@dimen/launch_btn_margin"
                             android:layout_marginTop="20dp"
                             app:passwordToggleDrawable="@drawable/show_password_selector"

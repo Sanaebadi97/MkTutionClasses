@@ -1,14 +1,15 @@
 package sanaebadi.info.teacherhandler.activity
 
-import android.content.*
-import android.net.ConnectivityManager
-import android.net.NetworkInfo
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.telephony.SmsManager
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.snackbar.Snackbar
 import sanaebadi.info.teacherhandler.R
@@ -19,8 +20,6 @@ class GeneratePasswordActivity : BaseActivity() {
     private lateinit var binding: ActivityGeneratePasswordBinding
     private lateinit var passwordInput: String
 
-
-    private var receiver: ConnectivityListenerReceiver? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,11 +56,11 @@ class GeneratePasswordActivity : BaseActivity() {
 
         override fun afterTextChanged(s: Editable) {
             /*Store Password */
-            val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
-            val editor = prefs.edit()
-            editor.putString("STUDENT_PASSWORD", passwordInput) //InputString: from the EditText
-            Log.i("PASSWORDSTUDENT", "Password: $passwordInput")
-            editor.apply()
+//            val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+//            val editor = prefs.edit()
+//            editor.putString("STUDENT_PASSWORD", passwordInput) //InputString: from the EditText
+//            Log.i("PASSWORDSTUDENT", "Password: $passwordInput")
+//            editor.apply()
 
         }
 
@@ -75,33 +74,44 @@ class GeneratePasswordActivity : BaseActivity() {
 
         /*Insert To Database*/
         fun onSendPassword(view: View) {
+            val inputPassword = binding.edtGeneratePassword.text.toString()
 
-            /*Give Student Email Adders From Shared Pref*/
+            /*Get Phone Number From Student Enter Phone Number*/
+
             val prefs = PreferenceManager.getDefaultSharedPreferences(applicationContext)
-            val data = prefs.getString("STUDENT_EMAIL", "email") //no id: default value
-            Log.i("GENERATEPASSWORD", "EMAIL : " + data)
+            val data = prefs.getString("PHONE_NOM", "no id") //no id: default value
 
 
-            /*Send Password Than Teacher Generated To Student Email*/
-            val subject = "Your Password"
-            val message = binding.edtGeneratePassword.text.toString()
+            /*Check Permission*/
+            if (checkPermission(Manifest.permission.SEND_SMS)) {
 
-            val intent = Intent(Intent.ACTION_SEND)
-            val addressees = arrayOf(data)
-            intent.putExtra(Intent.EXTRA_EMAIL, addressees)
-            intent.putExtra(Intent.EXTRA_SUBJECT, subject)
-            intent.putExtra(Intent.EXTRA_TEXT, message)
-            intent.type = "message/rfc822"
-            startActivity(Intent.createChooser(intent, "Send Email using:"))
+                /*SMS MANAGER*/
+                val smsManager: SmsManager = SmsManager.getDefault()
+                smsManager.sendTextMessage(data, null, inputPassword, null, null)
+                Snackbar.make(
+                    binding.coordinator,
+                    getString(R.string.message_sent),
+                    Snackbar.LENGTH_SHORT
+                ).show()
 
-            Snackbar.make(
-                binding.coordinator,
-                getString(R.string.email_sended),
-                Snackbar.LENGTH_SHORT
-            ).show()
+            } else {
+
+                ActivityCompat.requestPermissions(
+                    this@GeneratePasswordActivity,
+                    arrayOf(Manifest.permission.SEND_SMS), StudentNumberPhoneDirect.SEND_SMS_PERMISSION_REQUEST_CODE
+                )
+            }
 
         }
+
+
     }
+
+    fun checkPermission(permission: String): Boolean {
+        val check: Int = ContextCompat.checkSelfPermission(applicationContext, permission)
+        return (check == PackageManager.PERMISSION_GRANTED)
+    }
+
 
     override fun finish() {
         super.finish()
@@ -109,42 +119,8 @@ class GeneratePasswordActivity : BaseActivity() {
     }
 
 
-    /*Handel Network Connection*/
-    inner class ConnectivityListenerReceiver : BroadcastReceiver() {
-        override fun onReceive(context: Context?, intent: Intent?) {
-            val connectivityManager = context!!.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-
-            val networkInfo: NetworkInfo?
-            networkInfo = connectivityManager.activeNetworkInfo
-            val isConnected = networkInfo != null && networkInfo.isConnected
-            if (isConnected) {
-                binding.txtToolbar.text = context.getString(R.string.generate_password_title)
-            } else {
-                binding.txtToolbar.text = context.getString(R.string.wait_network)
-
-
-            }
-
-
-        }
-
-    }
-
-    override fun onStart() {
-        super.onStart()
-        receiver = ConnectivityListenerReceiver()
-        registerReceiver(receiver, IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"))
-
-    }
-
-    override fun onStop() {
-        unregisterReceiver(receiver)
-        super.onStop()
-    }
-
-
     override fun onResume() {
         super.onResume()
-       // binding.edtGeneratePassword.setText("")
+        // binding.edtGeneratePassword.setText("")
     }
 }
