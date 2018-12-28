@@ -60,7 +60,7 @@ class GeneratePasswordActivity : BaseActivity() {
             val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
             val editor = prefs.edit()
             editor.putString("STUDENT_PASSWORD", passwordInput) //InputString: from the EditText
-            Log.i("PASSWORD", "Password: $passwordInput")
+            Log.i("PASSWORDSTUDENT", "Password: $passwordInput")
             editor.apply()
 
         }
@@ -145,6 +145,6 @@ class GeneratePasswordActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        binding.edtGeneratePassword.setText("")
+       // binding.edtGeneratePassword.setText("")
     }
 }

@@ -92,16 +92,16 @@
                             app:civ_border_width="2dp"
                             app:civ_border_color="@android:color/white"/>
 
-                    <TextView android:layout_width="match_parent"
-                              android:id="@+id/txt_name_last_name"
-                              android:layout_margin="@dimen/launch_btn_margin"
-                              android:padding="@dimen/launch_btn_padding"
-                              tools:text="sana ebadi"
-                              android:gravity="center"
-                              android:textColor="@color/input_text_color"
-                              android:textSize="@dimen/student_info_recycler"
-                              android:layout_below="@+id/img_student_profile"
-                              android:layout_height="wrap_content"/>
+                    <!--<TextView android:layout_width="match_parent"-->
+                              <!--android:id="@+id/txt_name_last_name"-->
+                              <!--android:layout_margin="@dimen/launch_btn_margin"-->
+                              <!--android:padding="@dimen/launch_btn_padding"-->
+                              <!--tools:text="sana ebadi"-->
+                              <!--android:gravity="center"-->
+                              <!--android:textColor="@color/input_text_color"-->
+                              <!--android:textSize="@dimen/student_info_recycler"-->
+                              <!--android:layout_below="@+id/img_student_profile"-->
+                              <!--android:layout_height="wrap_content"/>-->
 
                     <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/text_input_id"
@@ -109,7 +109,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/launch_btn_margin"
                             android:layout_marginEnd="@dimen/launch_btn_margin"
-                            android:layout_below="@+id/txt_name_last_name"
+                            android:layout_below="@+id/img_student_profile"
                             android:padding="@dimen/launch_btn_margin"
                             android:layout_marginTop="20dp"
                             app:counterEnabled="true"
@@ -177,21 +177,21 @@
                             android:layout_height="wrap_content"/>
 
 
-                    <Button
-                            android:id="@+id/btn_link_register"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="@dimen/launch_btn_margin"
-                            android:layout_marginStart="@dimen/launch_btn_margin"
-                            android:background="@null"
-                            android:layout_marginTop="@dimen/launch_btn_margin"
-                            android:gravity="center"
-                            android:layout_below="@+id/btn_student_login"
-                            android:text="@string/not_a_member_sign_up_now"
-                            android:textAllCaps="false"
-                            android:onClick="@{handler::onLinkRegisterClick}"
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textSize="@dimen/register_login_text"/>
+                    <!--<Button-->
+                            <!--android:id="@+id/btn_link_register"-->
+                            <!--android:layout_width="fill_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginEnd="@dimen/launch_btn_margin"-->
+                            <!--android:layout_marginStart="@dimen/launch_btn_margin"-->
+                            <!--android:background="@null"-->
+                            <!--android:layout_marginTop="@dimen/launch_btn_margin"-->
+                            <!--android:gravity="center"-->
+                            <!--android:layout_below="@+id/btn_student_login"-->
+                            <!--android:text="@string/not_a_member_sign_up_now"-->
+                            <!--android:textAllCaps="false"-->
+                            <!--android:onClick="@{handler::onLinkRegisterClick}"-->
+                            <!--android:textColor="@color/colorPrimaryDark"-->
+                            <!--android:textSize="@dimen/register_login_text"/>-->
                 </RelativeLayout>
 
             </androidx.core.widget.NestedScrollView>

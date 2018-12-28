@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
@@ -66,7 +67,7 @@ class StudentLoginActivity : BaseActivity() {
             Observer {
                 try {
                     if (!it.stu_first_name!!.isEmpty() && !it.stu_last_name!!.isEmpty()) {
-                       // binding.txtNameLastName.text = it.stu_first_name + " " + it.stu_last_name
+                        // binding.txtNameLastName.text = it.stu_first_name + " " + it.stu_last_name
                     } else {
                         Log.e(TAG, "Data Is Null Student Name and LastName")
                     }
@@ -124,7 +125,15 @@ class StudentLoginActivity : BaseActivity() {
                 getString(R.string.processing), true
             )
             if (!TextUtils.isEmpty(stuEmail) && !TextUtils.isEmpty(stuPass)) {
-                firebaseAuth.signInWithEmailAndPassword(stuEmail, stuPass).addOnCompleteListener {
+
+
+                /*Give Student Email Adders From Shared Pref*/
+                val prefs = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+                val data = prefs.getString("STUDENT_PASSWORD", "password") //no id: default value
+                Log.i("GENERATEEMAIL", "PASSWORD : " + data)
+
+
+                firebaseAuth.signInWithEmailAndPassword(stuEmail, data!!).addOnCompleteListener {
                     dialog.dismiss()
                     if (it.isSuccessful) {
                         val snackbar: Snackbar = Snackbar.make(
@@ -151,12 +160,12 @@ class StudentLoginActivity : BaseActivity() {
             }
         }
 
-        /*Go To Register Activity*/
-        fun onLinkRegisterClick(view: View) {
-            val intent = Intent(applicationContext, StudentRegisterActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
+//        /*Go To Register Activity*/
+//        fun onLinkRegisterClick(view: View) {
+//            val intent = Intent(applicationContext, StudentRegisterActivity::class.java)
+//            startActivity(intent)
+//            finish()
+//        }
     }
 
     override fun finish() {
