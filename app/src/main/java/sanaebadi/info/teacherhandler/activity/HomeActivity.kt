@@ -84,7 +84,7 @@ class HomeActivity : BaseActivity(), HomeScreenAdapter.OnItemClickListener {
 
             }
             2 -> {
-                intent = Intent(applicationContext, StudentLoginActivity::class.java)
+                intent = Intent(applicationContext, StudentNumberPhoneDirect::class.java)
                 startActivity(this.intent)
             }
 

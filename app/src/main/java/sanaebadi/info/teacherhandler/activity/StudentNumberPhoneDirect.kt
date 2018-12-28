@@ -2,6 +2,7 @@ package sanaebadi.info.teacherhandler.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import sanaebadi.info.teacherhandler.R
 
 class StudentNumberPhoneDirect : AppCompatActivity() {
 

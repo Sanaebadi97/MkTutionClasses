@@ -156,4 +156,7 @@
     <string name="enter_password_key">Enter less than 10 characters</string>
     <string name="send_password">Send Password</string>
     <string name="email_sended">Email Sanded!</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="direct_password">Enter Your Phone Number To Send you The Password</string>
+    <string name="enter_your_phone_nom">Enter Your Phone Nom</string>
 </resources>
