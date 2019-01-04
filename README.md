@@ -9,10 +9,15 @@ This Project Is Test For Handeling The Schools.I used Kotlin and Firebase , Room
 
 # Components that are used
   -Firebase RealTime Database
+  
   -Firebase Storage
+  
   -Firebase Push  Notification
+  
   -Firebase Crashlytics
+  
   -Firebase Auth(Email and Password)
+  
   -...
   
   
