@@ -1,4 +1,4 @@
-# StudentTeacher
+# MkTutionClasses
 
 
 ![screenshot_2019-01-03_05-24-26](https://user-images.githubusercontent.com/26750131/50633206-79497600-0f18-11e9-9dbe-9360b2d6acba.png)
@@ -8,17 +8,17 @@ This Project Is Test For Handeling The Schools.I used Kotlin and Firebase , Room
 
 
 # Components that are used
-  -Firebase RealTime Database
+  - Firebase RealTime Database
   
-  -Firebase Storage
+  - Firebase Storage
   
-  -Firebase Push  Notification
+  - Firebase Push  Notification
   
-  -Firebase Crashlytics
+  - Firebase Crashlytics
   
-  -Firebase Auth(Email and Password)
+  - Firebase Auth(Email and Password)
   
-  -...
+  - ...
   
   
 
