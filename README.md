@@ -6,5 +6,17 @@
 It's easy to run classes and students.
 This Project Is Test For Handeling The Schools.I used Kotlin and Firebase , Room , LiveData and etc.
 
+
+# Components that are used
+  -Firebase RealTime Database
+  -Firebase Storage
+  -Firebase Push  Notification
+  -Firebase Crashlytics
+  -Firebase Auth(Email and Password)
+  -...
+  
+  
+
+
 I hope that it will be useful.
 And Fork it For Development :)
