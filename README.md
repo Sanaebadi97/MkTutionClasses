@@ -16,7 +16,7 @@ This Project Is Test For Handeling The Schools.I used Kotlin and Firebase , Room
   
   - ```Firebase Crashlytics```
   
-  - Firebase Auth(Email and Password)
+  - ```Firebase Auth(Email and Password)```
   
   - ...
   
