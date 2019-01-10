@@ -20,7 +20,7 @@ This Project Is Test For Handeling The Schools.I used Kotlin and Firebase , Room
   
   - ...
   
-  
+  Used ```SharedPreferences``` Fore Store Some Data And ```Room``` For Live Data 
 
 
 I hope that it will be useful.
