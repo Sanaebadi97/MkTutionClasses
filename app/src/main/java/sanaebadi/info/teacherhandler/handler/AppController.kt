@@ -13,7 +13,7 @@ class AppController : Application() {
 
         CalligraphyConfig.initDefault(
             CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/droidsans.ttf")
+                .setDefaultFontPath("fonts/san.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build()
         )
