@@ -1,12 +1,14 @@
 package sanaebadi.info.teacherhandler.activity
 
 import android.Manifest
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.telephony.SmsManager
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -56,11 +58,11 @@ class GeneratePasswordActivity : BaseActivity() {
 
         override fun afterTextChanged(s: Editable) {
             /*Store Password */
-//            val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
-//            val editor = prefs.edit()
-//            editor.putString("STUDENT_PASSWORD", passwordInput) //InputString: from the EditText
-//            Log.i("PASSWORDSTUDENT", "Password: $passwordInput")
-//            editor.apply()
+            val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+            val editor = prefs.edit()
+            editor.putString("STUDENT_PASSWORD", passwordInput) //InputString: from the EditText
+            Log.i("PASSWORDSTUDENT", "Password: $passwordInput")
+            editor.apply()
 
         }
 

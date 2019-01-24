@@ -8,6 +8,7 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import androidx.databinding.DataBindingUtil
+import com.google.android.material.snackbar.Snackbar
 import sanaebadi.info.teacherhandler.R
 import sanaebadi.info.teacherhandler.databinding.ActivityStudentNumberPhoneDirectBinding
 
@@ -80,12 +81,21 @@ class StudentNumberPhoneDirect : BaseActivity() {
 
             Log.i("CONSOLE", "PHONE NUMBER $inputPhoneNom")
 
-            /*Start Login Activity*/
+            Snackbar.make(
+                binding.coordinator,
+                getString(R.string.message_sent),
+                Snackbar.LENGTH_SHORT
+            ).show()
+
+
+
+        }
+
+
+        fun onLinkToLogin(view:View){
             val intent = Intent(applicationContext, StudentLoginActivity::class.java)
             startActivity(intent)
             finish()
-
-
 
         }
     }

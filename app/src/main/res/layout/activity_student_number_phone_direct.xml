@@ -149,7 +149,21 @@
                             android:layout_below="@+id/text_input_id"
                             android:layout_height="wrap_content"/>
 
-
+                    <Button
+                            android:id="@+id/btn_link_register"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/launch_btn_margin"
+                            android:layout_marginStart="@dimen/launch_btn_margin"
+                            android:background="@null"
+                            android:layout_marginTop="@dimen/launch_btn_margin"
+                            android:gravity="center"
+                            android:onClick="@{handler::onLinkToLogin}"
+                            android:layout_below="@+id/btn_student_send_phone_num"
+                            android:text="@string/btn_link_to_register"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="@dimen/register_login_text"/>
                 </RelativeLayout>
 
             </androidx.core.widget.NestedScrollView>
